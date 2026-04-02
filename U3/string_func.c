@@ -130,6 +130,7 @@ void concatenate(char *a, char *c)
 */
 
 // compare function
+/*
 int compare(char*,char*);
 int main()
 {
@@ -143,7 +144,7 @@ int main()
         printf("ASCII of str1<str2");
 }
 
-// iterative
+// using iteration
 // int compare(char *a, char *b)
 // {
 //     int i;
@@ -158,3 +159,4 @@ int compare(char *a, char *b)
     for(; *a && *b && *a==*b; a++,b++);
     return *a-*b;
 }
+*/
