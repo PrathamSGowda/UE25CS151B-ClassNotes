@@ -29,25 +29,34 @@ int main()
 }
 
 // using iterative way
-int len(char *a)
-{
-    int i=0;
-    while (a[i]!='\0')
-    {
-        i++;
-    }
-    return i;
-}
+// int len(char *a)
+// {
+//     int i=0;
+//     while (a[i]!='\0')
+//     {
+//         i++;
+//     }
+//     return i;
+// }
 
 // using pointer arithmetic
+// int len(char *a)
+// {
+//     int i=0;
+//     while(*a) // *a!='\0'
+//     {
+//         i++;a++;
+//     }
+//     return i;
+// }
+
+// using recursion
 int len(char *a)
 {
-    int i=0;
-    while(*a) // *a!='\0'
-    {
-        i++;a++;
-    }
-    return i;
+    if(!*a)
+        return 0;
+    else
+        return 1 + len(++a);
 }
 */
 
@@ -158,5 +167,33 @@ int compare(char *a, char *b)
     int i;
     for(; *a && *b && *a==*b; a++,b++);
     return *a-*b;
+}
+*/
+
+
+// search function
+/*
+char* find(char*,char);
+int main()
+{
+    char *p;
+    char a[20] ="welcome";
+    p = find(a,'l');
+    if(p!=NULL)
+        printf("found at %d\n",p-a);
+    else
+        printf("Not found\n");
+}
+char* find(char *a,char ch)
+{
+    char *p = NULL;
+    int i = 0;
+    while(a[i]!='\0' && p == NULL)
+    {
+        if(a[i]==ch)
+            p = &a[i];
+        i++;
+    }
+    return p;
 }
 */
