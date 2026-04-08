@@ -66,8 +66,25 @@ int main()
     for(int i = 0;i<3;i++)
         printf("%d\t",p1[i]);
 
-    // dangling pointer and NULL pointer in calloc is the same as malloc
+    // dangling pointer and NULL pointer error in calloc is the same as malloc
     */
+
+    // realloc function
+    // realloc can only be used on dynamic array and not static array
+    // realloc initialises using garbage value
+    int *ptr = (int*)malloc(3*sizeof(int));
+    printf("ptr=%d\n",ptr);
+    for(int i = 0;i<3;i++)
+        scanf("%d",&ptr[i]);
+    for(int i = 0;i<3;i++)
+        printf("%d\t",ptr[i]);
+
+    ptr = (int*)realloc(ptr,4);
+    printf("ptr=%d\n",ptr);
+    for(int i = 3;i<7;i++)
+        scanf("%d",(ptr+i));
+    for(int i = 0;i<7;i++)
+        printf("%d\t",*(ptr+i));
 
     return 0;
 }
