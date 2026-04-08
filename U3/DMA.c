@@ -3,7 +3,9 @@
 int main()
 {
     /*
+
     // malloc function
+
     int n;
     printf("Enter the value of n : \n");
     scanf("%d",&n);
@@ -45,11 +47,27 @@ int main()
     printf("*ptr = %d\n",*ptr); // after initialisation 
     */
 
-    int *p = (int*)malloc(sizeof(int));
-    printf("ptr = %d\n",p);
-    p = (int*)malloc(sizeof(int));
-    printf("ptr = %d\n",p); // content of p is overwritten which is bad programming
-    // free() should be used and then after that intialise the pointer to NULL 
+    // int *p = (int*)malloc(sizeof(int));
+    // printf("ptr = %d\n",p);
+    // p = (int*)malloc(sizeof(int));
+    // printf("ptr = %d\n",p); // content of p is overwritten which is bad programming
+    // // free() should be used and then after that intialise the pointer to NULL 
+
+
+    // calloc function
+    /*
+    // int *p1 = (int*)calloc(sizeof(int)); // throws error because calloc needs two arguments
+    int *p1 = (int*)calloc(sizeof(int),3);
+    printf("p1 = %d\n",p1); 
+    for(int i = 0;i<3;i++)
+        printf("%d\t",p1[i]); // before initialisation prints 0 as default value
+    for(int i = 0;i<3;i++)
+        scanf("%d",&p1[i]);
+    for(int i = 0;i<3;i++)
+        printf("%d\t",p1[i]);
+
+    // dangling pointer and NULL pointer in calloc is the same as malloc
+    */
 
     return 0;
 }
