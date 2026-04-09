@@ -72,6 +72,7 @@ int main()
     // realloc function
     // realloc can only be used on dynamic array and not static array
     // realloc initialises using garbage value
+    /*
     int *ptr = (int*)malloc(3*sizeof(int));
     printf("ptr=%d\n",ptr);
     for(int i = 0;i<3;i++)
@@ -87,4 +88,5 @@ int main()
         printf("%d\t",*(ptr+i));
 
     return 0;
+    */
 }
