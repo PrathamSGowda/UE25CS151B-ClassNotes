@@ -106,16 +106,48 @@ struct demo
     char a;
     int i;
 };
-struct demo modify(struct demo);
+// struct demo modify(struct demo); // struct as a parameter
+// struct demo modify(struct demo*); // pointer to struct as a parameter 
+// struct demo* modify(struct demo); // return pointer and parameter is instance variable
+struct demo* modify(struct demo*); // return type and parameter both pointer
 int main()
 {
     struct demo d1 = {'A',65};
-    struct demo d2;
-    d2 = modify(d1);
-    printf("%c %d\n",d2.a,d2.i);
+    //struct demo d2;
+    //d2 = modify(d1);
+    //struct demo *d2;
+    //d2 = modify(&d1);
+    //d2 = modify(d1);
+    struct demo *d2 = &d1;
+    struct demo *d3;
+    d3 = modify(d2); // modify(&d1)
+    printf("%c %d\n",d1.a,d1.i);
+    printf("%c %d\n",d2->a,d2->i);
 }
-struct demo modify(struct demo d1)
+/*
+struct demo modify(struct demo d1) // does not change value in d1
 {
     d1.i = 74;
     return d1;
+}
+*/
+/*
+struct demo modify(struct demo *d1) // changes value in d1 as well
+{
+    d1->i = d1->i+10;
+    return *d1; // return instance variable when parameter is pointer
+}
+*/
+/*
+struct demo* modify(struct demo d1)
+{
+    d1.i = d1.i+10;
+    return &d1; // return address when return type is pointer
+    // the above is an example of dangling pointer because the func call block is deleted after execution 
+}
+*/
+struct demo* modify(struct demo *d1)
+{
+    d1->i = d1->i+10;
+    return d1; // will lead to undefined behavioud (dangling pointer)
 }
