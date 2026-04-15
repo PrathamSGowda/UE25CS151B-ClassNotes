@@ -149,5 +149,5 @@ struct demo* modify(struct demo d1)
 struct demo* modify(struct demo *d1)
 {
     d1->i = d1->i+10;
-    return d1; // will lead to undefined behavioud (dangling pointer)
+    return d1; // will lead to undefined behaviour
 }
