@@ -26,10 +26,55 @@ int main()
 
 int main()
 {
-    struct student s[2] = {1,'A',67,2,'B',78};
+    struct student s[2] = {1,"A",67,2,"B",78};
     struct student *p = s;
+    /*
     printf("address of s = %d\n",s);
     printf("address of p = %d\n",p);
-    printf("%d\n",*p); // wrong way to print 1 prints random value
+    // printf("%d\n",*p); // wrong way to print 1 prints random value
     printf("%d\n",(*p).rn); // correct way to print 1;
+    printf("%d\n",p->m); // 67
+    p++; // it moves to the next block of structure
+    printf("address of p = %d\n",p);
+    printf("%s\n",p->name); // B
+    */
+
+    int i;
+    for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",p[i].rn,p[i].name,p[i].m); // correct
+    }
+
+    /*
+    for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",p[i]->rn,p[i]->name,p[i]->m); // error
+    }
+    */
+   for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",(p+i)->rn,(p+i)->name,(p+i)->m); // correct
+    }
+    /*
+    for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",*(p+i)->rn,*(p+i)->name,*(p+i)->m); // error
+    }
+    */
+    /*
+   for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",(*(p+i))->rn,(*(p+i))->name,(*(p+i))->m); // error
+    }
+    */
+    /*
+   for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",*(p+i).rn,*(p+i).name,*(p+i).m); // error
+    }
+    */
+   for(i=0;i<2;i++)
+    {
+        printf("%d %s %d\n",(*(p+i)).rn,(*(p+i)).name,(*(p+i)).m); // correct
+    }
 }
