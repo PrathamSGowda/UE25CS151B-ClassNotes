@@ -76,6 +76,7 @@ int main()
 */
 
 // union inside structure
+/*
 struct sample
 {
     int i;
@@ -96,3 +97,24 @@ int main()
     printf("%s\n",s.u.k);
     printf("%d\n",s.i); //memory for i is allocated seperately because its a member of struct
 }
+*/
+
+// structure inside union
+/*
+union sample
+{
+    int i;
+    struct sample
+    {
+        char c;
+        float j;
+    }s1;
+};
+int main()
+{
+    union sample u;
+    printf("%d\n",sizeof(union sample));
+    printf("%d\n",sizeof(struct sample)); 
+}
+// STRUCTURE INSIDE UNION IS NOT VALID
+*/
