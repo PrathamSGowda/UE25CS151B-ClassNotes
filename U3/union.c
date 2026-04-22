@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 /*
 struct sample
 {
@@ -52,7 +53,7 @@ int main()
     // printf("%d\n",d.u.i); // error as i is member of outer union
 }
 */
-
+/*
 union demo
 {
     int i;
@@ -71,4 +72,27 @@ int main()
     printf("%c\n",s1.k);
     s1.j = 22.23;
     printf("%f\n",s1.j);
+}
+*/
+
+// union inside structure
+struct sample
+{
+    int i;
+    union demo
+    {
+        float j; char k[20];
+    }u;
+};
+int main()
+{
+    printf("%d\n",sizeof(struct sample)); // 24
+    printf("%d\n",sizeof(union demo)); // 20
+    struct sample s;
+    s.i = 12;
+    s.u.j = 34.23;
+    printf("%f\n",s.u.j);
+    strcpy(s.u.k,"psg");
+    printf("%s\n",s.u.k);
+    printf("%d\n",s.i); //memory for i is allocated seperately because its a member of struct
 }
