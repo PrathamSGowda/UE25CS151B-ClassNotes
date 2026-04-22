@@ -5,6 +5,7 @@ enum days
 {
     // mon,tue,wed,thu,fri,sat,sun
     mon=1,tue,wed,thu,fri,sat,sun // tue = 2 wed = 3 and so on
+    // mon,tue,wed=6,thu,fri=10,sat,sun // 0 1 6 7 10 11 12
 };
 int main()
 {
