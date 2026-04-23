@@ -100,11 +100,11 @@ int main()
 */
 
 // structure inside union
-/*
+
 union sample
 {
     int i;
-    struct sample
+    struct sample1
     {
         char c;
         float j;
@@ -114,7 +114,10 @@ int main()
 {
     union sample u;
     printf("%d\n",sizeof(union sample));
-    printf("%d\n",sizeof(struct sample)); 
+    printf("%d\n",sizeof(struct sample1)); 
+    u.i = 45;
+    printf("%d\n",u.i);
+    u.s1.c = 'A';
+    u.s1.j = 23.23;
+    printf("%c %f\n",u.s1.c,u.s1.j);
 }
-// STRUCTURE INSIDE UNION IS NOT VALID
-*/
