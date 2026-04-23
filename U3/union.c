@@ -100,7 +100,7 @@ int main()
 */
 
 // structure inside union
-
+/*
 union sample
 {
     int i;
@@ -121,3 +121,4 @@ int main()
     u.s1.j = 23.23;
     printf("%c %f\n",u.s1.c,u.s1.j);
 }
+*/
