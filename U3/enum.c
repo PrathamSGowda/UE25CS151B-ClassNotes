@@ -42,7 +42,7 @@ int main()
 
 }
 */
-
+/*
 enum capital
 {
     Delhi,Tokyo
@@ -61,4 +61,30 @@ int main()
     n1 = Delhi;
     printf("%d\n",n1);
 
+}
+*/
+
+// enum as parameter to function
+enum sample
+{
+    a,b,c
+};
+void f1(enum sample);
+int main()
+{
+    enum sample s;
+    //s = a;
+    scanf("%d",&s);
+    f1(s);
+    return 0;
+}
+void f1(enum sample s)
+{
+    switch(s)
+    {
+        case 0 : printf("a\n"); break;
+        case 1 : printf("b\n"); break;
+        case 2 : printf("c\n"); break;
+        default : printf("invalid\n"); break;
+    }
 }
