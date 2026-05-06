@@ -46,8 +46,7 @@
 
     // char b[20];
     // char c[20];
-    // strcpy(b,a); // copies a into b (but doesn't include null character while copying)
-    // b[11] = '\0';
+    // strcpy(b,a); // copies a into b (does include null character while copying)
     // printf("b = %s\n",b);
     // strncpy(c,b,3); // copies first 3 characters from b to c
     // printf("c = %s\n",c);
