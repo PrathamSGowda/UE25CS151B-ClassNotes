@@ -72,7 +72,6 @@ int binary_searchi(int a[] , int low, int high, int key)
         }            
     }
     return pos; 
-}
 
 
 
@@ -96,7 +95,7 @@ int binary_searchr(int a[], int low, int high, int key,)
         {
             return mid; 
         }
-        else if (a[mid]>mid)
+        else if (a[mid]>key)
         {
             return binary_searchr(a,low,mid-1,key); 
         }
