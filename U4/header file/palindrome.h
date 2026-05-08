@@ -1,5 +1,6 @@
 #ifndef PALIN_H
 
-int palin(int);
+int npalin(int);
+int cpalin(char []);
 
 #endif

@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <string.h>
 #include "palindrome.h"
-int palin(int n)
+int npalin(int n)
 {
     int num = n;
     int rev = 0;
@@ -10,4 +11,17 @@ int palin(int n)
         num = num/10;
     }
     return rev == n;
+}
+int cpalin(char s[])
+{
+    int left = 0;
+    int right = strlen(s)-1;
+    while(left<right)
+    {
+        if(s[left]!=s[right])
+            return 0;
+        left++;
+        right--;
+    }
+    return 1;
 }
